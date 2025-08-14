@@ -11,13 +11,12 @@
    :maxdepth: 2
    :caption: 32-Channel Servo Controller
 
-   docs/1_User_Manual_formatted.md
+   docs/1_User_Manual_checked.md
    docs/2_Communication_Protocol.md
-   docs/3_MP3_Module.md
-   docs/4_Arduino_Development_formatted.md
-   docs/5_C51_Development_formatted.md
-   docs/6_STM32_Development_checked.md
-   docs/7_Raspberry_Pi_Development_checked.md
-   docs/8_Jetson_Development_checked.md
+   docs/3_Arduino_Development_checked.md
+   docs/4_C51_Development_formatted.md
+   docs/5_STM32_Development_formatted.md
+   docs/6_Raspberry_Pi_Development_checked.md
+   docs/7_Jetson_Development_formatted.md
    docs/Appendix.md
    Download <https://drive.google.com/drive/folders/1AEIxNZHDjNQ_JE6GpjL1Z1A_RiOpMyz1?usp=sharing>
