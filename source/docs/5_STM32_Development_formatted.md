@@ -1,4 +1,4 @@
-# 5.LSC-32 Controller Secondary Development-STM32 Development
+# 5. LSC-32 Controller Secondary Development-STM32 Development
 
 ## 5.1 Getting Ready
 
@@ -6,7 +6,7 @@
 
 This section employs the STM32 controller based on `STC15W4K32S4` and a 32-channel servo controller for development, powered by a 7.4V lithium battery. Connect the serial ports of the servo controller and the STM32 controller.
 
-<img src="../_static/media/chapter_5/section_1/media/image4.png" class="common_img" />
+<img src="../_static/media/chapter_5/image4.png" class="common_img" />
 
 :::{Note}
 * The servo wiring shown above is for illustrative purposes only. For specific connection interfaces, please refer to the following text.
@@ -17,7 +17,7 @@ This section employs the STM32 controller based on `STC15W4K32S4` and a 32-chann
 
 ### 5.1.2 Environment Configuration
 
-Install `Keil5` software on PC. The software package is stored in [Appendix -> STM32 Software](). For the detailed operations of `Keil5`, please refer to the relevant tutorials.
+Install `Keil5` software on PC. The software package is stored in [Appendix -> STM32 Software](Appendix.md). For the detailed operations of `Keil5`, please refer to the relevant tutorials.
 
 ## 5.2 Development Case
 
@@ -27,17 +27,17 @@ In this case, commands are sent from the serial port to the servo controller, wh
 
 * **Run Program**
 
-Open the <img src="../_static/media/chapter_5/section_1/media/image5.png" /> download tool in [2. Software&gt;STM32 Software]().
+Open the <img src="../_static/media/chapter_5/image5.png" /> download tool in [2. Software&gt;STM32 Software](Appendix.md).
 
-<img src="../_static/media/chapter_5/section_1/media/image5.png" />
+<img src="../_static/media/chapter_5/image5.png" class="common_img"/>
 
 Configure it as shown in the figure:
 
-<img src="../_static/media/chapter_5/section_1/media/image6.png" class="common_img" />
+<img src="../_static/media/chapter_5/image6.png" class="common_img" />
 
-Click <img src="../_static/media/chapter_5/section_1/media/image7.png" />. Locate and open the hex file stored in [STM32 Development/Case 1 Single Servo Rotation Control/PROJECT/OPT]().
+Click <img src="../_static/media/chapter_5/image7.png" />. Locate and open the hex file stored in [STM32 Development/Case 1 Single Servo Rotation Control/PROJECT/OPT](https://drive.google.com/drive/folders/16Ftm18kJETFp2c_CMhh-ahgmghgYnKOR?usp=sharing).
 
-<img src="../_static/media/chapter_5/section_1/media/image8.png" class="common_img" />
+<img src="../_static/media/chapter_5/image8.png" class="common_img" />
 
 After opening the program, click **"Start ISP"** to download the program to the STM32 microcontroller.
 
@@ -45,7 +45,7 @@ After opening the program, click **"Start ISP"** to download the program to the 
 When downloading the program, remove the jumper cap on the STM32 microcontroller and press the reset button. When the prompt **"Mission Complete, Anything OK"** appears in the lower right corner, it is successfully downloaded. Next, insert the jumper cap back into the STM32 microcontroller.
 :::
 
-<img src="../_static/media/chapter_5/section_1/media/image9.png" class="common_img" />
+<img src="../_static/media/chapter_5/image9.png" class="common_img" />
 
 After the download is completed, switch the servo controller on. Press the reset button on the STM32 microcontroller. The servo 1 will start to rotate.
 
@@ -55,7 +55,7 @@ After running the program, the servo 1 will continuously rotate between the posi
 
 * **Program Analysis**
 
-[Source Code]()
+[Source Code](https://drive.google.com/drive/folders/16Ftm18kJETFp2c_CMhh-ahgmghgYnKOR?usp=sharing)
 
 (1) Import the Required Function Package
 
@@ -68,7 +68,6 @@ Import the function package in `main.c` program. The function package mainly enc
 #include "LobotServoController.h"
 #include "bool.h"
 ```
-<img src="../_static/media/chapter_5/section_1/media/image10.png" class="common_img" />
 
 In the `main.c` file, a delay function is used for delaying in units of seconds (s).
 
@@ -80,6 +79,7 @@ void delay_s(int s)
 		delay_ms(1000);
 }
 ```
+
 (2) Initialize Serial Port
 
 In the `uart.c` file, initialize the serial port. Configure `PA9` as the `TX` pin for outputting data, and `PA10` as the `RX` pin for reading data. The `USART` should be configured with 8 data bits, 1 stop bit, no parity, no flow control, and in read/write mode.
@@ -117,6 +117,7 @@ void uartInit(u32 bound)
 	USART_Cmd(USART1, ENABLE);
 }
 ```
+
 (3) Servo Rotation Control
 
 Before running the main program, call the `SystemInit()` function to initialize the system clock. Call the `delay_init(72)` function to initialize the delay program. Set the `NVIC` interrupt controller to generate interrupts via the system clock to provide delays. Initialize the baud rate of the serial port to 9600.
@@ -144,23 +145,24 @@ Therefore, the program will control the PWM servo 1 to rotate to a position with
  }
 }
 ```
+
 ### 5.2.2 Case 2 Single Servo Speed Control
 
 In this case, commands are sent from the serial port to the servo controller, which then controls the PWM servo to rotate at different speed.
 
 * **Run Program**
 
-Open the <img src="../_static/media/chapter_5/section_1/media/image5.png" /> download tool in [Appendix&gt;STM32 Software]().
+Open the <img src="../_static/media/chapter_5/image5.png" /> download tool in [Appendix&gt;STM32 Software](Appendix.md).
 
-<img src="../_static/media/chapter_5/section_1/media/image5.png" />
+<img src="../_static/media/chapter_5/image5.png" class="common_img"/>
 
 Configure it as shown in the figure:
 
-<img src="../_static/media/chapter_5/section_1/media/image14.png" class="common_img" />
+<img src="../_static/media/chapter_5/image14.png" class="common_img" />
 
-Click <img src="../_static/media/chapter_5/section_1/media/image7.png" />. Locate and open the hex file stored in [ STM32 Development/Case 2 Single Servo Speed Control/PROJECT/OPT]().
+Click <img src="../_static/media/chapter_5/image7.png" />. Locate and open the hex file stored in [ STM32 Development/Case 2 Single Servo Speed Control/PROJECT/OPT](https://drive.google.com/drive/folders/1zcZSndEh9YWMmvmTjO05jV0-83uT176Q?usp=sharing).
 
-<img src="../_static/media/chapter_5/section_1/media/image15.png" class="common_img" />
+<img src="../_static/media/chapter_5/image15.png" class="common_img" />
 
 After opening the program, click **"Start ISP"** to download the program to the STM32 microcontroller.
 
@@ -168,7 +170,7 @@ After opening the program, click **"Start ISP"** to download the program to the 
 When downloading the program, remove the jumper cap on the STM32 microcontroller and press the reset button. When the prompt **"Mission Complete, Anything OK"** appears in the lower right corner, it is successfully downloaded. Next, insert the jumper cap back into the STM32 microcontroller.
 :::
 
-<img src="../_static/media/chapter_5/section_1/media/image16.png" class="common_img" />
+<img src="../_static/media/chapter_5/image16.png" class="common_img" />
 
 After the download is completed, switch the servo controller on. Press the reset button on the STM32 microcontroller. The servo 1 will start to rotate.
 
@@ -178,7 +180,7 @@ After running the program, the servo 1 will rotate from the position 0 to 1000 a
 
 * **Program Analysis**
 
-[Source Code]()
+[Source Code](https://drive.google.com/drive/folders/1zcZSndEh9YWMmvmTjO05jV0-83uT176Q?usp=sharing)
 
 (1) Import the Required Function Package
 
@@ -191,6 +193,7 @@ Import the function package in `main.c` program. The function package mainly enc
 #include "LobotServoController.h"
 #include "bool.h"
 ```
+
 In the `main.c` file, a delay function is used for delaying in units of seconds (s).
 
 {lineno-start=6}
@@ -201,6 +204,7 @@ void delay_s(int s)
 		delay_ms(1000);
 }
 ```
+
 (2) Initialize Serial Port
 
 In the `uart.c` file, initialize the serial port. Configure `PA9` as the `TX` pin for outputting data, and `PA10` as the `RX` pin for reading data. The `USART` should be configured with 8 data bits, 1 stop bit, no parity, no flow control, and in read/write mode.
@@ -239,6 +243,7 @@ void uartInit(u32 bound)
 	USART_Cmd(USART1, ENABLE);
 }
 ```
+
 (3) Main Program
 
 Before running the main program, call the `SystemInit()` function to initialize the system clock. Call the `delay_init(72)` function to initialize the delay program. Set the `NVIC` interrupt controller to generate interrupts via the system clock to provide delays. Initialize the baud rate of the serial port to 9600.
@@ -271,23 +276,24 @@ Therefore, the program will control the servo to rotate at a speed of 1200ms to 
  }
 }
 ```
+
 ### 5.2.3 Case 3 Multiple Servos Rotation Control
 
 In this case, commands are sent from the serial port to the servo controller, which then controls multiple PWM servos rotation.
 
 * **Run Program**
 
-Open the <img src="../_static/media/chapter_5/section_1/media/image5.png" /> download tool in [Appendix&gt;STM32 Software]().
+Open the <img src="../_static/media/chapter_5/image5.png" /> download tool in [Appendix&gt;STM32 Software](Appendix.md).
 
-<img src="../_static/media/chapter_5/section_1/media/image5.png" />
+<img src="../_static/media/chapter_5/image5.png" class="common_img"/>
 
 Configure it as shown in the figure:
 
-<img src="../_static/media/chapter_5/section_1/media/image6.png" class="common_img" />
+<img src="../_static/media/chapter_5/image6.png" class="common_img" />
 
-Click <img src="../_static/media/chapter_5/section_1/media/image7.png" />. Locate and open the hex file stored in [STM32 Development/Case 3 Multiple Servos Rotation Control/PROJECT/OPT]().
+Click <img src="../_static/media/chapter_5/image7.png" />. Locate and open the hex file stored in [STM32 Development/Case 3 Multiple Servos Rotation Control/PROJECT/OPT](https://drive.google.com/drive/folders/1mtg0h2GeuAt7I17QmOC21s4Y_etoH5xU?usp=sharing).
 
-<img src="../_static/media/chapter_5/section_1/media/image20.png" class="common_img" />
+<img src="../_static/media/chapter_5/image20.png" class="common_img" />
 
 After opening the program, click **"Start ISP"** to download the program to the STM32 microcontroller.
 
@@ -295,7 +301,7 @@ After opening the program, click **"Start ISP"** to download the program to the 
 When downloading the program, remove the jumper cap on the STM32 microcontroller and press the reset button. When the prompt **"Mission Complete, Anything OK"** appears in the lower right corner, it is successfully downloaded. Next, insert the jumper cap back into the STM32 microcontroller.
 :::
 
-<img src="../_static/media/chapter_5/section_1/media/image21.png" class="common_img" />
+<img src="../_static/media/chapter_5/image21.png" class="common_img" />
 
 After the download is completed, switch the servo controller on. Press the reset button on the STM32 microcontroller. The servo 1 will start to rotate.
 
@@ -305,7 +311,7 @@ After the program is executed, servos 1 to 3 will continuously rotate between th
 
 * **Program Analysis**
 
-[Source Code]()
+[Source Code](https://drive.google.com/drive/folders/1mtg0h2GeuAt7I17QmOC21s4Y_etoH5xU?usp=sharing)
 
 (1) Import the Required Function Package
 
@@ -318,6 +324,7 @@ Import the function package in `main.c` program. The function package mainly enc
 #include "LobotServoController.h"
 #include "bool.h"
 ```
+
 In the `main.c` file, a delay function is used for delaying in units of seconds (s).
 
 {lineno-start=6}
@@ -329,6 +336,7 @@ void delay_s(int s)
 }
 
 ```
+
 (2) Initialize Serial Port
 
 In the `uart.c` file, initialize the serial port. Configure `PA9` as the `TX` pin for outputting data, and `PA10` as the `RX` pin for reading data. The `USART` should be configured with 8 data bits, 1 stop bit, no parity, no flow control, and in read/write mode.
@@ -367,12 +375,14 @@ void uartInit(u32 bound)
 	USART_Cmd(USART1, ENABLE);
 }
 ```
+
 (3) Define Servo Structure
 
 {lineno-start=12}
 ```python
 LobotServo servos[3];
 ```
+
 Store the servos to be controlled and their information in the `LobotServo` structure, which is mainly used for controlling multiple servos.
 
 (4) Servo Rotation Control
@@ -415,6 +425,7 @@ LobotServo servos[3];
 }
 
 ```
+
 ### 5.2.4 Case 4 Adjust Neutral Position and Deviation
 
 In this case, commands are sent to the servo controller via serial port. Then, the servo controller rotates the servo to the neutral position and deviation position.
@@ -425,17 +436,17 @@ The servo deviation is caused by the interval between the teeth on the spline of
 
 * **Run Program**
 
-Open the <img src="../_static/media/chapter_5/section_1/media/image5.png" /> download tool in [Appendix&gt;STM32 Software]().
+Open the <img src="../_static/media/chapter_5/image5.png" /> download tool in [Appendix&gt;STM32 Software](Appendix.md).
 
-<img src="../_static/media/chapter_5/section_1/media/image5.png" />
+<img src="../_static/media/chapter_5/image5.png" class="common_img"/>
 
 Configure it as shown in the figure:
 
-<img src="../_static/media/chapter_5/section_1/media/image6.png" class="common_img" />
+<img src="../_static/media/chapter_5/image6.png" class="common_img" />
 
-Click <img src="../_static/media/chapter_5/section_1/media/image7.png" />. Locate and open the hex file stored in [ STM32 Development/Case 4 Adjust Neutral Position and Deviation/PROJECT/OPT]().
+Click <img src="../_static/media/chapter_5/image7.png" />. Locate and open the hex file stored in [ STM32 Development/Case 4 Adjust Neutral Position and Deviation/PROJECT/OPT](https://drive.google.com/drive/folders/13k4VM11I1sMso6aRP4MVkDLRhO7lgmq9?usp=sharing).
 
-<img src="../_static/media/chapter_5/section_1/media/image26.png" class="common_img" />
+<img src="../_static/media/chapter_5/image26.png" class="common_img" />
 
 After opening the program, click **"Start ISP"** to download the program to the STM32 microcontroller.
 
@@ -443,7 +454,7 @@ After opening the program, click **"Start ISP"** to download the program to the 
 When downloading the program, remove the jumper cap on the STM32 microcontroller and press the reset button. When the prompt **"Mission Complete, Anything OK"** appears in the lower right corner, it is successfully downloaded. Next, insert the jumper cap back into the STM32 microcontroller.
 :::
 
-<img src="../_static/media/chapter_5/section_1/media/image27.png" class="common_img" />
+<img src="../_static/media/chapter_5/image27.png" class="common_img" />
 
 After the download is completed, switch the servo controller on. Press the reset button on the STM32 microcontroller. The servo 1 will start to rotate.
 
@@ -453,7 +464,7 @@ The servo returns to the neutral position. After a short delay, it rotates to th
 
 * **Program Analysis**
 
-[Source Code]()
+[Source Code](https://drive.google.com/drive/folders/13k4VM11I1sMso6aRP4MVkDLRhO7lgmq9?usp=sharing)
 
 (1) Import the Required Function Package
 
@@ -466,6 +477,7 @@ Import the function package in `main.c` program. The function package mainly enc
 #include "LobotServoController.h"
 #include "bool.h"
 ```
+
 In the `main.c` file, a delay function is used for delaying in units of seconds (s).
 
 {lineno-start=6}
@@ -476,6 +488,7 @@ void delay_s(int s)
 		delay_ms(1000);
 }
 ```
+
 (2) Initialize Serial Port
 
 In the `uart.c` file, initialize the serial port. Configure `PA9` as the `TX` pin for outputting data, and `PA10` as the `RX` pin for reading data. The `USART` should be configured with 8 data bits, 1 stop bit, no parity, no flow control, and in read/write mode.
@@ -514,6 +527,7 @@ void uartInit(u32 bound)
 	USART_Cmd(USART1, ENABLE);
 }
 ```
+
 (3) Servo Rotation Control
 
 Before running the main program, define the servo deviation parameter. Then, control the servo 1 to rotate to the neutral position. After a two-second delay, add a deviation to the neutral position, allowing the servo to rotate to the deviation position and maintain that position.

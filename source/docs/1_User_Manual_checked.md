@@ -237,17 +237,19 @@ The debugging explanation is based on ID1 servo, and other ID servos are the sam
 
 The three images represent the three basic positions of the servo (neutral position, minimum angle, and maximum angle). For demonstration, a servo arm is inserted as a reference (with the label on the right side of the servo arm as the initial position).
 
-<img src="../_static/media/chapter_1/image60.jpeg" class="common_img" />
+<img src="../_static/media/chapter_1/image60.jpeg" class="common_img" style="width:600px;"/>
 
 Neutral position: 135°servo angle, which is corresponding to the position of 1500
 
-<img src="../_static/media/chapter_1/image61.jpeg" class="common_img" />
+<img src="../_static/media/chapter_1/image61.jpeg" class="common_img" style="width:600px;"/>
 
 Minimum position: 0°servo angle, which is corresponding to the position of 500
 
-<img src="../_static/media/chapter_1/image62.jpeg" class="common_img" />
+<img src="../_static/media/chapter_1/image62.jpeg" class="common_img" style="width:600px;"/>
 
 Maximum position: 270°servo angle, which is corresponding to the position of 2500
+
+<p id="anchor_1_4_3"></p>
 
 ### 1.4.3 Wired Connection Debugging
 
@@ -310,11 +312,11 @@ The controller should be turned on before connecting the Bluetooth debugging mod
 
 (3) If the LED lights are still flashing after 50 seconds, press the **"DEL"** button on the Bluetooth debugging module.
 
-<img src="../_static/media/chapter_1/image69.jpeg" class="common_img" />
+<img src="../_static/media/chapter_1/image69.jpeg" class="common_img" style="width:600px;"/>
 
 (4) Wait for the Bluetooth connection. When the LED light on the Bluetooth debugging module is on, the connection is successful.
 
-<img src="../_static/media/chapter_1/image70.jpeg" class="common_img" />
+<img src="../_static/media/chapter_1/image70.jpeg" class="common_img" style="width:600px;"/>
 
 (5) Open the PC software and select the connected COM interface. Do not connect if it is COM1, as it is the system communication interface of the computer. Choose the baud rate of 9600. If you choose the baud rate of 115200, you cannot control it. The buzzer will also sound during control. Click **"Connect Wireless"**, and the status button will turn green when the connection is successful.
 
@@ -324,7 +326,7 @@ The controller should be turned on before connecting the Bluetooth debugging mod
 
 <img src="../_static/media/chapter_1/image72.png" class="common_img" />
 
-(7) Please refer to [1.4.3 Wired Connection Debugging]() for debugging.
+(7) Please refer to [1.4.3 Wired Connection Debugging](#anchor_1_4_3) for debugging.
 
 <p id="anchor_1_5"></p>
 

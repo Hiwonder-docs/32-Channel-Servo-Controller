@@ -1,4 +1,4 @@
-# 4.LSC-32 Controller Secondary Development-C51 Development
+# 4. LSC-32 Controller Secondary Development-C51 Development
 
 ## 4.1 Getting Started
 
@@ -9,20 +9,26 @@ This section employs an open-source servo controller, a STC15W4K32S4 microcontro
 <img src="../_static/media/chapter_4/image3.png" class="common_img" />
 
 :::{Note}
-* When wiring, connect the power supply to the open-source servo controller. Power the 32-channel servo controller by connecting the servo port on the open-source servo controller to the power input on the 32-ch servo controller. Make sure to connect the servo interface “+” to the power supply “+”, and servo interface “-” to power supply “-”. **Do not reverse the polarity, and do not plug the power cable directly into the servo ports on the 36-ch servo controller.**
+* When wiring, connect the power supply to the open-source servo controller. Power the 32-channel servo controller by connecting the servo port on the open-source servo controller to the power input on the 32-ch servo controller. Make sure to connect the servo interface "**+**" to the power supply "**+**", and servo interface "**-**" to power supply "**-**". **Do not reverse the polarity, and do not plug the power cable directly into the servo ports on the 36-ch servo controller.**
 * For serial connections, connect the `RX` pin of the open-source servo controller to the `TX` pin of the 32-channel servo controller. Connect the `TX` pin of the open-source board to the `RX` pin of the 36-channel controller, and connect `GND` to `GND`.
 :::
 
-<img src="../_static/media/chapter_4/image4.jpeg" class="common_img" /><img src="../_static/media/chapter_4/image5.jpeg" class="common_img" /><img src="../_static/media/chapter_4/image6.jpeg" class="common_img" /><img src="../_static/media/chapter_4/image6.jpeg" class="common_img" />
+<img src="../_static/media/chapter_4/image4.jpg" class="common_img" style="width:600px;"/>
+
+<img src="../_static/media/chapter_4/image5.jpg" class="common_img" style="width:600px;"/>
+
+<img src="../_static/media/chapter_4/image6.jpg" class="common_img" style="width:600px;"/>
+
+<img src="../_static/media/chapter_4/image6.jpg" class="common_img" style="width:600px;"/>
 
 The pin wiring method is shown in the table below:
 
 | 32-ch servo controller | Picture for 32-ch servo controller | Open-source servo controller | Picture for open-source servo controller |
 | :--- | :--- | :--- | :--- |
-| RX | <img src="../_static/media/chapter_4/image7.jpeg" /> | TX | <img src="../_static/media/chapter_4/image4.jpeg" /> |
+| RX | <img src="../_static/media/chapter_4/image7.jpg" /> | TX | <img src="../_static/media/chapter_4/image4.jpg" /> |
 | TX | | RX | |
 | GND | | GND | |
-| Power Input + | <img src="../_static/media/chapter_4/image7.jpeg" /> | Servo Interface + | <img src="../_static/media/chapter_4/image5.jpeg" /> |
+| Power Input + | <img src="../_static/media/chapter_4/image7.jpg" /> | Servo Interface + | <img src="../_static/media/chapter_4/image5.jpg" /> |
 | Power Input - | | Servo Interface - | |
 
 :::{Note}
@@ -34,7 +40,7 @@ The pin wiring method is shown in the table below:
 
 ### 4.1.2 Environment Configuration
 
-Install `Keil4` software on PC. The software package is stored in [Appendix->C51 Software](). For the detailed operations of `Keil4`, please refer to the relevant tutorials.
+Install `Keil4` software on PC. The software package is stored in [Appendix->C51 Software](Appendix.md). For the detailed operations of `Keil4`, please refer to the relevant tutorials.
 
 ## 4.2 Development Case
 
@@ -44,7 +50,7 @@ In this example, the serial port is used to send instructions to the 32-ch servo
 
 * **Run Program**
 
-Open the STC-ISP download tool in [Appendix->C51 Software]():
+Open the STC-ISP download tool in [Appendix->C51 Software](Appendix.md):
 
 <img src="../_static/media/chapter_4/image8.png" class="common_img" />
 
@@ -52,7 +58,7 @@ The STC-ISP configuration is shown as follow:
 
 <img src="../_static/media/chapter_4/image9.png" class="common_img" />
 
-Click **"Open Code File"** and find the hex file in [**"C51 Program/Case 1 Control PWM Servo Movement/LobotServoTurn_C51/OBJ"**]().
+Click **"Open Code File"** and find the hex file in [**"C51 Program/Case 1 Control PWM Servo Movement/LobotServoTurn_C51/OBJ"**](../_static/source_code/C51_Development.zip).
 
 <img src="../_static/media/chapter_4/image10.png" class="common_img" />
 
@@ -62,7 +68,7 @@ After opening the program file, click **"Download/Program"** to upload the code 
 
 <img src="../_static/media/chapter_4/image12.png" class="common_img" />
 
-Once the upload is complete, turn on the 32-ch servo controller’s power switch, and Servo ID 1 will start moving.
+Once the upload is complete, turn on the 32-ch servo controller's power switch, and Servo ID 1 will start moving.
 
 * **Project Outcome**
 
@@ -70,7 +76,7 @@ After running the program, the servo will continuously swing back and forth betw
 
 * **Program Brief Analysis**
 
-[Source Code]()
+[Source Code](../_static/source_code/C51_Development.zip)
 
 (1) Import Necessary Libraries
 
@@ -127,7 +133,7 @@ int main(void)
 
 }
 ```
-Before running the main program, call the `InitUart()` function to initialize the UART. Then, use functions from the `lsc2d.c` file to send data to the 32-ch servo controller and control the servo’s movement.
+Before running the main program, call the `InitUart()` function to initialize the UART. Then, use functions from the `lsc2d.c` file to send data to the 32-ch servo controller and control the servo's movement.
 
 ### 4.2.2 Case 2 Control PWM Servo Speed
 
@@ -135,7 +141,7 @@ In this example, the serial port is used to send instructions to the 32-ch servo
 
 * **Run Program**
 
-Open the STC-ISP download tool in [Appendix->C51 Software]():
+Open the STC-ISP download tool in [Appendix->C51 Software](Appendix.md):
 
 <img src="../_static/media/chapter_4/image8.png" class="common_img" />
 
@@ -143,7 +149,7 @@ The STC-ISP configuration is shown as follow:
 
 <img src="../_static/media/chapter_4/image9.png" class="common_img" />
 
-Click **"Open Code File"** and find the hex file in [**"C51 Program/Case 2 Control PWM Servo Speed/LobotServoSpeed_C51/OBJ"**]().
+Click **"Open Code File"** and find the hex file in [**"C51 Program/Case 2 Control PWM Servo Speed/LobotServoSpeed_C51/OBJ"**](../_static/source_code/C51_Development.zip).
 
 <img src="../_static/media/chapter_4/image17.png" class="common_img" />
 
@@ -153,7 +159,7 @@ After opening the program file, click **"Download/Program"** to upload the code 
 
 <img src="../_static/media/chapter_4/image12.png" class="common_img" />
 
-Once the upload is complete, turn on the 32-ch servo controller’s power switch, and Servo ID 1 will start moving.
+Once the upload is complete, turn on the 32-ch servo controller's power switch, and Servo ID 1 will start moving.
 
 * **Project Outcome**
 
@@ -161,7 +167,7 @@ After running the program, the servo will rotate from position 500 to position 2
 
 * **Program Brief Analysis**
 
-[Source Code]()
+[Source Code](../_static/source_code/C51_Development.zip)
 
 (1) Import Necessary Libraries
 
@@ -172,12 +178,14 @@ Import the package in `main.c` program:
 #include "include.h"
 #include "lsc2d.h"
 ```
+
 Import the package in `include.h` file:
 
 {lineno-start=1}
 ```c
 #include "include.h"
 ```
+
 The library includes the necessary modules for communicating with the 32-ch servo controller. You can use the predefined variables and functions in it to control the servo.
 
 (2) UART Initialization
@@ -195,6 +203,7 @@ void InitUart(void)
 
 }
 ```
+
 In the `uart.c` file, initialize the UART by enabling UART1 through the `SCON` register. The `AUCR` and `IE2` registers are configured so that UART1 uses `Timer 2` to generate the baud rate. Set the initial count values of `T2L` and `T2H` to configure the baud rate to 9600.
 
 (3) Main Program
@@ -225,6 +234,7 @@ int main(void)
 
 }
 ```
+
 Before running the main program, call the `InitUart()` function to initialize the UART. Then, use functions from the `lsc2d.c` file to send data to the 32-ch servo controller, enabling the servos to rotate at different speeds.
 
 ### 4.2.3 Case 3 Control Multiple Servos
@@ -233,7 +243,7 @@ In this example, the serial port is used to send instructions to the 32-ch servo
 
 * **Run Program**
 
-Open the STC-ISP download tool in [Appendix->C51 Software]():
+Open the STC-ISP download tool in [Appendix->C51 Software](Appendix.md):
 
 <img src="../_static/media/chapter_4/image8.png" class="common_img" />
 
@@ -241,7 +251,7 @@ The STC-ISP configuration is shown as follow:
 
 <img src="../_static/media/chapter_4/image9.png" class="common_img" />
 
-Click **"Open Code File"** and find the hex file in [C51 Development/Source Code/Case 3 Control Multiple Servos/OBJ/LobotServosTurn_C51]().
+Click **"Open Code File"** and find the hex file in [C51 Development/Source Code/Case 3 Control Multiple Servos/OBJ/LobotServosTurn_C51](../_static/source_code/C51_Development.zip).
 
 <img src="../_static/media/chapter_4/image20.png" class="common_img" />
 
@@ -257,7 +267,7 @@ After running the program, Servo 1 and Servo 2 will move back and forth between 
 
 * **Program Brief Analysis**
 
-[Source Code]()
+[Source Code](../_static/source_code/C51_Development.zip)
 
 (1) Import Necessary Libraries
 
@@ -292,6 +302,7 @@ void InitUart(void)
 
 }
 ```
+
 In the `uart.c` file, initialize the UART by enabling UART1 through the `SCON` register. The `AUCR` and `IE2` registers are configured so that UART1 uses `Timer 2` to generate the baud rate. Set the initial count values of `T2L` and `T2H` to configure the baud rate to 9600.
 
 (3) Define Servo Structure
@@ -300,6 +311,7 @@ In the `uart.c` file, initialize the UART by enabling UART1 through the `SCON` r
 ```c
 LobotServo servos[3];		
 ```
+
 Store the servos to be controlled and their related information in the `LobotServo` structure, which is mainly used for controlling multiple servos.
 
 (4) Control Servo Movement
@@ -337,6 +349,7 @@ int main(void)
 
 }
 ```
+
 The servo information stored in the structure is sent to the 32-ch servo controller via the serial port. The controller parses the received commands and moves each corresponding servo to its specified position.
 
 ### 4.2.4 Case 4 Central Position & Deviation Adjustment
@@ -349,7 +362,7 @@ Servo deviation is caused by the spacing of the splines on the servo arm—a mec
 
 * **Run Program**
 
-Open the STC-ISP download tool in [Appendix->C51 Software]():
+Open the STC-ISP download tool in [Appendix->C51 Software](Appendix.md):
 
 <img src="../_static/media/chapter_4/image8.png" class="common_img" />
 
@@ -357,7 +370,7 @@ The STC-ISP configuration is shown as follow:
 
 <img src="../_static/media/chapter_4/image9.png" class="common_img" />
 
-Click **"Open Code File"** and find the hex file in ["C51 Program/Case 4 Central Position & Deviation Adjustment/LobotServosDeviation_C51/OBJ"]().
+Click **"Open Code File"** and find the hex file in ["**C51 Program/Case 4 Central Position & Deviation Adjustment/LobotServosDeviation_C51/OBJ**"](../_static/source_code/C51_Development.zip).
 
 <img src="../_static/media/chapter_4/image23.png" class="common_img" />
 
@@ -373,7 +386,7 @@ The servo first returns to the central position. After a short delay, it rotates
 
 * **Program Brief Analysis**
 
-[Source Code]()
+[Source Code](../_static/source_code/C51_Development.zip)
 
 (1) Import Necessary Libraries
 
@@ -384,12 +397,14 @@ Import the package in `main.c` program:
 #include "include.h"
 #include "lsc2d.h"
 ```
+
 Import the package in `include.h` file:
 
 {lineno-start=1}
 ```c
 #include "include.h"
 ```
+
 The library includes the necessary modules for communicating with the 32-ch servo controller. You can use the predefined variables and functions in it to control the servo.
 
 (2) UART Initialization
@@ -407,6 +422,7 @@ void InitUart(void)
 
 }
 ```
+
 In the `uart.c` file, initialize the UART by enabling UART1 through the `SCON` register. The `AUCR` and `IE2` registers are configured so that UART1 uses `Timer 2` to generate the baud rate. Set the initial count values of `T2L` and `T2H` to configure the baud rate to 9600.
 
 (3) Control Servo Movement
@@ -433,4 +449,5 @@ int main(void)
 
 }
 ```
+
 Before the main program runs, define the servo deviation. First, move the servo to its central position and hold for 2 seconds. Then, based on this central position, apply an additional deviation to move the servo to the new target position, and keep it at this deviation angle.
