@@ -14,7 +14,7 @@ This section employs Arduino UNO and 32-channel servo controller for development
 Connect the red wire to "**+**", and the black wire to "**-**". The positive and negative poles must be matched correctly.
 :::
 
-<img src="../_static/media/chapter_3/section_1/media/image3.png" class="common_img" />
+<img src="../_static/media/chapter_3/image3.png" class="common_img" />
 
 (2) Use female-to-female DuPont wires to connect the Arduino UNO to the controller.
 
@@ -23,11 +23,11 @@ Connect the red wire to "**+**", and the black wire to "**-**". The positive and
 Connect the `TX` and `RX` interfaces in reverse, `GND` to `GND`, and `3.3V` to `3.3V`.
 :::
 
-<img src="../_static/media/chapter_3/section_1/media/image4.png" class="common_img" />
+<img src="../_static/media/chapter_3/image4.png" class="common_img" />
 
 ① Connect the servo to the interface 1 on the controller.
 
-<img src="../_static/media/chapter_3/section_1/media/image5.png" class="common_img" />
+<img src="../_static/media/chapter_3/image5.png" class="common_img" />
 
 :::{Note}
 * When using our lithium battery, connect the lithium battery interface wire with red to positive (+) and black to negative (-) to the DC port.
@@ -46,15 +46,15 @@ Install Arduino on PC. The software package is stored in [Appendix->Arduino Inst
 
 (1) Open Arduino IDE. Click **"Sketch -> Include Library -> Add .ZIP Library"** in the menu bar.
 
-<img src="../_static/media/chapter_3/section_1/media/image6.png" class="common_img" />
+<img src="../_static/media/chapter_3/image6.png" class="common_img" />
 
 (2) Locate and open the library file in [Arduino Development/Library File (import before the first use)](../_static/source_code/Arduino_Development.zip).
 
-<img src="../_static/media/chapter_3/section_1/media/image7.png" class="common_img" />
+<img src="../_static/media/chapter_3/image7.png" class="common_img" />
 
 (3) Return to the IDE. When the prompt shown in the following image appears, the library file is successfully added.
 
-<img src="../_static/media/chapter_3/section_1/media/image8.png" class="common_img" />
+<img src="../_static/media/chapter_3/image8.png" class="common_img" />
 
 ## 3.2 Development Case
 
@@ -80,18 +80,18 @@ You must add the library file when running the program for the first time. Other
 The port may not be unique. Arduino IDE will add the Arduino model after the corresponding port number.
 :::
 
-<img src="../_static/media/chapter_3/section_1/media/image9.jpeg" class="common_img" />
+<img src="../_static/media/chapter_3/image9.jpg" class="common_img" />
 
-<img src="../_static/media/chapter_3/section_1/media/image10.png" class="common_img" />
+<img src="../_static/media/chapter_3/image10.png" class="common_img" />
 
 :::{Note}
 
 When downloading the program, the serial ports of the Arduino UNO and the servo controller should be disconnected. Otherwise, the program will fail to be downloaded.
 :::
 
-(4) After Arduino UNO is connected, click <img src="../_static/media/chapter_3/section_1/media/image11.png" />to download the program. After the download is complete, follow [3.1.1 Wiring Instruction](#anchor_3_1_1) to connect the servo controller to the Arduino UNO. Then, switch the servo controller on. The servo 1 will start to rotate.
+(4) After Arduino UNO is connected, click <img src="../_static/media/chapter_3/image11.png" />to download the program. After the download is complete, follow [3.1.1 Wiring Instruction](#anchor_3_1_1) to connect the servo controller to the Arduino UNO. Then, switch the servo controller on. The servo 1 will start to rotate.
 
-<img src="../_static/media/chapter_3/section_1/media/image12.png" class="common_img" />
+<img src="../_static/media/chapter_3/image12.png" class="common_img" />
 
 (2) Program Outcome
 
@@ -160,16 +160,16 @@ You must add the library file when running the program for the first time. Other
 The port may not be unique. Arduino IDE will add the Arduino model after the corresponding port number.
 :::
 
-<img src="../_static/media/chapter_3/section_1/media/image9.jpeg" class="common_img" />
+<img src="../_static/media/chapter_3/image9.jpeg" class="common_img" />
 
-<img src="../_static/media/chapter_3/section_1/media/image10.png" class="common_img" />
+<img src="../_static/media/chapter_3/image10.png" class="common_img" />
 
 :::{Note}
 
 When downloading the program, the serial ports of the Arduino UNO and the servo controller should be disconnected. Otherwise, the program will fail to be downloaded.
 :::
 
-(4) After Arduino UNO is connected, click <img src="../_static/media/chapter_3/section_1/media/image11.png" />to download the program. After the download is complete, follow [3.1.1 Wiring Instruction](#anchor_3_1_1) to connect the servo controller to the Arduino UNO. Then, switch the servo controller on. The servo 1 will start to rotate.
+(4) After Arduino UNO is connected, click <img src="../_static/media/chapter_3/image11.png" />to download the program. After the download is complete, follow [3.1.1 Wiring Instruction](#anchor_3_1_1) to connect the servo controller to the Arduino UNO. Then, switch the servo controller on. The servo 1 will start to rotate.
 
 * **Program Outcome**
 
@@ -243,16 +243,16 @@ You must add the library file when running the program for the first time. Other
 The port may not be unique. Arduino IDE will add the Arduino model after the corresponding port number.
 :::
 
-<img src="../_static/media/chapter_3/section_1/media/image9.jpeg" class="common_img" />
+<img src="../_static/media/chapter_3/image9.jpeg" class="common_img" />
 
-<img src="../_static/media/chapter_3/section_1/media/image10.png" class="common_img" />
+<img src="../_static/media/chapter_3/image10.png" class="common_img" />
 
 :::{Note}
 
 When downloading the program, the serial ports of the Arduino UNO and the servo controller should be disconnected. Otherwise, the program will fail to be downloaded.
 :::
 
-(4) After Arduino UNO is connected, click <img src="../_static/media/chapter_3/section_1/media/image11.png" />to download the program. After the download is complete, follow [3.1.1 Wiring Instruction](#anchor_3_1_1) to connect the servo controller to the Arduino UNO. Then, switch the servo controller on. The servo 1 will start to rotate.
+(4) After Arduino UNO is connected, click <img src="../_static/media/chapter_3/image11.png" />to download the program. After the download is complete, follow [3.1.1 Wiring Instruction](#anchor_3_1_1) to connect the servo controller to the Arduino UNO. Then, switch the servo controller on. The servo 1 will start to rotate.
 
 * **Program Outcome**
 
@@ -335,16 +335,16 @@ You must add the library file when running the program for the first time. Other
 The port may not be unique. Arduino IDE will add the Arduino model after the corresponding port number.
 :::
 
-<img src="../_static/media/chapter_3/section_1/media/image9.jpeg" class="common_img" />
+<img src="../_static/media/chapter_3/image9.jpeg" class="common_img" />
 
-<img src="../_static/media/chapter_3/section_1/media/image10.png" class="common_img" />
+<img src="../_static/media/chapter_3/image10.png" class="common_img" />
 
 :::{Note}
 
 When downloading the program, the serial ports of the Arduino UNO and the servo controller should be disconnected. Otherwise, the program will fail to be downloaded.
 :::
 
-(4) After Arduino UNO is connected, click <img src="../_static/media/chapter_3/section_1/media/image11.png" />to download the program. After the download is complete, follow [3.1.1 Wiring Instruction](#anchor_3_1_1) to connect the servo controller to the Arduino UNO. Then, switch the servo controller on. The servo 1 will start to rotate.
+(4) After Arduino UNO is connected, click <img src="../_static/media/chapter_3/image11.png" />to download the program. After the download is complete, follow [3.1.1 Wiring Instruction](#anchor_3_1_1) to connect the servo controller to the Arduino UNO. Then, switch the servo controller on. The servo 1 will start to rotate.
 
 * **Program Outcome**
 
