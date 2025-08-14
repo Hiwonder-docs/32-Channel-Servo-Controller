@@ -160,7 +160,7 @@ You must add the library file when running the program for the first time. Other
 The port may not be unique. Arduino IDE will add the Arduino model after the corresponding port number.
 :::
 
-<img src="../_static/media/chapter_3/image9.jpeg" class="common_img" />
+<img src="../_static/media/chapter_3/image9.jpg" class="common_img" />
 
 <img src="../_static/media/chapter_3/image10.png" class="common_img" />
 
@@ -243,7 +243,7 @@ You must add the library file when running the program for the first time. Other
 The port may not be unique. Arduino IDE will add the Arduino model after the corresponding port number.
 :::
 
-<img src="../_static/media/chapter_3/image9.jpeg" class="common_img" />
+<img src="../_static/media/chapter_3/image9.jpg" class="common_img" />
 
 <img src="../_static/media/chapter_3/image10.png" class="common_img" />
 
@@ -335,7 +335,7 @@ You must add the library file when running the program for the first time. Other
 The port may not be unique. Arduino IDE will add the Arduino model after the corresponding port number.
 :::
 
-<img src="../_static/media/chapter_3/image9.jpeg" class="common_img" />
+<img src="../_static/media/chapter_3/image9.jpg" class="common_img" />
 
 <img src="../_static/media/chapter_3/image10.png" class="common_img" />
 
