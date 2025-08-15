@@ -416,15 +416,15 @@ Please refer to [1.3.1 Setup PC Software Control Environment](#anchor_1_3_1) to 
 
 <img src="../_static/media/chapter_1/image87.png" class="common_img" />
 
-* **If the servo returns to the neutral position as shown in the figure below, no adjustment is needed.**
+(1) If the servo returns to the neutral position as shown in the figure below, no adjustment is needed.
 
 <img src="../_static/media/chapter_1/image88.jpeg" class="common_img" />
 
-(1) If the angle between the servo arm and the servo in the horizontal plane is less than 13 degrees, it can be adjusted to return to the neutral position via the PC software. It is a small deviation and can be adjusted based on [1.6.3 Small Deviation Adjustment](#anchor_1_6_3). The deviation is as follows:
+(2) If the angle between the servo arm and the servo in the horizontal plane is less than 13 degrees, it can be adjusted to return to the neutral position via the PC software. It is a small deviation and can be adjusted based on [1.6.3 Small Deviation Adjustment](#anchor_1_6_3). The deviation is as follows:
 
 <img src="../_static/media/chapter_1/image89.jpeg" class="common_img" />
 
-(2) If the angle between the servo arm and the servo in the horizontal plane is greater than 13 degrees, it cannot be adjusted to return to the neutral position via the PC software. It is a large deviation and can be adjusted based on [1.6.4 Large Deviation Adjustment](#anchor_1_64). The deviation is as follows:
+(3) If the angle between the servo arm and the servo in the horizontal plane is greater than 13 degrees, it cannot be adjusted to return to the neutral position via the PC software. It is a large deviation and can be adjusted based on [1.6.4 Large Deviation Adjustment](#anchor_1_64). The deviation is as follows:
 
 <img src="../_static/media/chapter_1/image90.jpeg" class="common_img" />
 
@@ -458,7 +458,9 @@ The adjustable range is between -100 and 100. If the servo arm can be adjusted t
 
 <img src="../_static/media/chapter_1/image93.png" class="common_img" />
 
-<img src="../_static/media/chapter_1/image94.png" class="common_img" /><img src="../_static/media/chapter_1/image95.png" class="common_img" />
+<img src="../_static/media/chapter_1/image94.png" class="common_img" />
+
+<img src="../_static/media/chapter_1/image95.png" class="common_img" />
 
 <p id="anchor_1_6_4"></p>
 
@@ -492,7 +494,9 @@ The specific control method is as follows:
 
 (2) Click **"Open action file"** to open the action group **"No. 10 Turn left and right"**.
 
-<img src="../_static/media/chapter_1/image99.png" /> <img src="../_static/media/chapter_1/image100.png" class="common_img" />
+<img src="../_static/media/chapter_1/image99.png"  class="common_img"  />
+
+ <img src="../_static/media/chapter_1/image100.png" class="common_img" />
 
 <img src="../_static/media/chapter_1/image101.png" class="common_img" />
 
@@ -648,12 +652,13 @@ Android user: Please locate the **PWM Servo-V1.0.1.apk** installation package in
 
 (2) Menu Bar:
 
-| <img src="../_static/media/chapter_1/image125.png" /> | Call the downloaded action group files in the controller |
-|:--:|:---|
-| <img src="../_static/media/chapter_1/image126.png" /> | Reset all servos to position 500 |
-| <img src="../_static/media/chapter_1/image127.png" /> | Display app version and other information |
-| <img src="../_static/media/chapter_1/image128.png" /> | Display Bluetooth connection and connection status |
-| <img src="../_static/media/chapter_1/image125.png" /> | Call the downloaded action group files in the controller |
+| Icon | Function Description |
+| :----------------------------------------------------------: | :------------------------------------------------------- |
+| <img src="../_static/media/chapter_1/image125.png" width="70px"/> | Call the downloaded action group files in the controller |
+| <img src="../_static/media/chapter_1/image126.png" width="70px"/> | Reset all servos to position 500                         |
+| <img src="../_static/media/chapter_1/image127.png" width="70px"/> | Display app version and other information                |
+| <img src="../_static/media/chapter_1/image128.png" width="70px" /> | Display Bluetooth connection and connection status       |
+| <img src="../_static/media/chapter_1/image125.png" width="70px" /> | Call the downloaded action group files in the controller |
 
 ### 1.9.4 Single Mode Interface Introduction
 
@@ -667,10 +672,10 @@ Android user: Please locate the **PWM Servo-V1.0.1.apk** installation package in
 
 | Icon | Function Description |
 |:--:|:---|
-| <img src="../_static/media/chapter_1/image125.png" /> | Call the downloaded action group files in the controller |
-| <img src="../_static/media/chapter_1/image126.png" /> | Reset all servos to position 500 |
-| <img src="../_static/media/chapter_1/image127.png" /> | Display app version and other information |
-| <img src="../_static/media/chapter_1/image128.png" /> | Display Bluetooth connection and connection status |
+| <img src="../_static/media/chapter_1/image125.png" width="70px"/> | Call the downloaded action group files in the controller |
+| <img src="../_static/media/chapter_1/image126.png" width="70px" /> | Reset all servos to position 500 |
+| <img src="../_static/media/chapter_1/image127.png" width="70px" /> | Display app version and other information |
+| <img src="../_static/media/chapter_1/image128.png" width="70px"/> | Display Bluetooth connection and connection status |
 
 ## 1.10 Specification
 

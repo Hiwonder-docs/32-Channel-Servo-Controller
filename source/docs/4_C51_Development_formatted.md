@@ -10,26 +10,56 @@ This section employs an open-source servo controller, a STC15W4K32S4 microcontro
 
 :::{Note}
 * When wiring, connect the power supply to the open-source servo controller. Power the 32-channel servo controller by connecting the servo port on the open-source servo controller to the power input on the 32-ch servo controller. Make sure to connect the servo interface "**+**" to the power supply "**+**", and servo interface "**-**" to power supply "**-**". **Do not reverse the polarity, and do not plug the power cable directly into the servo ports on the 36-ch servo controller.**
+
 * For serial connections, connect the `RX` pin of the open-source servo controller to the `TX` pin of the 32-channel servo controller. Connect the `TX` pin of the open-source board to the `RX` pin of the 36-channel controller, and connect `GND` to `GND`.
-:::
+  :::
 
-<img src="../_static/media/chapter_4/image4.jpg" class="common_img" style="width:600px;"/>
-
-<img src="../_static/media/chapter_4/image5.jpg" class="common_img" style="width:600px;"/>
-
-<img src="../_static/media/chapter_4/image6.jpg" class="common_img" style="width:600px;"/>
-
-<img src="../_static/media/chapter_4/image6.jpg" class="common_img" style="width:600px;"/>
+<p style="margin:0 auto 24px;width:100%">
+<img  src="../_static/media/chapter_4/image4.jpg" style="width:24%" />
+<img  src="../_static/media/chapter_4/image5.jpg" style="width:24%;" />
+<img src="../_static/media/chapter_4/image6.jpg"  style="width:24%"/>
+<img src="../_static/media/chapter_4/image7.jpg" style="width:24%"/>
+</p>
 
 The pin wiring method is shown in the table below:
 
-| 32-ch servo controller | Picture for 32-ch servo controller | Open-source servo controller | Picture for open-source servo controller |
-| :--- | :--- | :--- | :--- |
-| RX | <img src="../_static/media/chapter_4/image7.jpg" /> | TX | <img src="../_static/media/chapter_4/image4.jpg" /> |
-| TX | | RX | |
-| GND | | GND | |
-| Power Input + | <img src="../_static/media/chapter_4/image7.jpg" /> | Servo Interface + | <img src="../_static/media/chapter_4/image5.jpg" /> |
-| Power Input - | | Servo Interface - | |
+<table>
+  <thead>
+    <tr>
+      <th>32-ch servo controller</th>
+      <th>Picture for 32-ch servo controller</th>
+      <th>Open-source servo controller</th>
+      <th>Picture for open-source servo controller</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>RX</td>
+      <td rowspan="3"><img src="../_static/media/chapter_4/image6.jpg" alt="32-ch RX/TX"/></td>
+      <td>TX</td>
+      <td rowspan="3"><img src="../_static/media/chapter_4/image4.jpg" alt="Open-source TX/RX"/></td>
+    </tr>
+    <tr>
+      <td>TX</td>
+      <td>RX</td>
+    </tr>
+    <tr>
+      <td>GND</td>
+      <td>GND</td> 
+    </tr>
+    <tr>
+      <td>Power Input +</td>
+      <td rowspan="2"><img src="../_static/media/chapter_4/image7.jpg" alt="32-ch Power Input"/></td>
+      <td>Servo Interface +</td>
+      <td rowspan="2"><img src="../_static/media/chapter_4/image5.jpg" alt="Open-source Servo Interface"/></td>
+    </tr>
+    <tr>
+      <td>Power Input -</td>
+      <td>Servo Interface -</td>
+    </tr>
+  </tbody>
+</table>
+
 
 :::{Note}
 * When using Hiwonder's lithium battery, connect the battery cable with the red wire to the positive (+) terminal and the black wire to the negative (–) terminal of the DC port.
@@ -50,25 +80,25 @@ In this example, the serial port is used to send instructions to the 32-ch servo
 
 * **Run Program**
 
-Open the STC-ISP download tool in [Appendix->C51 Software](Appendix.md):
+(1) Open the STC-ISP download tool in [Appendix->C51 Software](Appendix.md):
 
 <img src="../_static/media/chapter_4/image8.png" class="common_img" />
 
-The STC-ISP configuration is shown as follow:
+(2) The STC-ISP configuration is shown as follow:
 
 <img src="../_static/media/chapter_4/image9.png" class="common_img" />
 
-Click **"Open Code File"** and find the hex file in [**"C51 Program/Case 1 Control PWM Servo Movement/LobotServoTurn_C51/OBJ"**](../_static/source_code/C51_Development.zip).
+(3) Click **"Open Code File"** and find the hex file in [**"C51 Program/Case 1 Control PWM Servo Movement/LobotServoTurn_C51/OBJ"**](../_static/source_code/C51_Development.zip).
 
 <img src="../_static/media/chapter_4/image10.png" class="common_img" />
 
-After opening the program file, click **"Download/Program"** to upload the code to the 51 microcontroller. **Note:** Before uploading, remove the jumper cap from the 51 microcontroller. Once the STC-ISP tool in the lower-right corner shows that it is detecting the target device, reinsert the jumper cap. The upload process will begin automatically.
+(4) After opening the program file, click **"Download/Program"** to upload the code to the 51 microcontroller. **Note:** Before uploading, remove the jumper cap from the 51 microcontroller. Once the STC-ISP tool in the lower-right corner shows that it is detecting the target device, reinsert the jumper cap. The upload process will begin automatically.
 
 <img src="../_static/media/chapter_4/image11.png" class="common_img" />
 
 <img src="../_static/media/chapter_4/image12.png" class="common_img" />
 
-Once the upload is complete, turn on the 32-ch servo controller's power switch, and Servo ID 1 will start moving.
+(5) Once the upload is complete, turn on the 32-ch servo controller's power switch, and Servo ID 1 will start moving.
 
 * **Project Outcome**
 
@@ -114,7 +144,7 @@ In the `uart.c` file, initialize the UART by enabling UART1 through the `SCON` r
 
 (3) Control Servo Movement
 
-{lineno-start=}
+{lineno-start=22}
 ```c
 int main(void)
 {
@@ -141,25 +171,25 @@ In this example, the serial port is used to send instructions to the 32-ch servo
 
 * **Run Program**
 
-Open the STC-ISP download tool in [Appendix->C51 Software](Appendix.md):
+(1) Open the STC-ISP download tool in [Appendix->C51 Software](Appendix.md):
 
 <img src="../_static/media/chapter_4/image8.png" class="common_img" />
 
-The STC-ISP configuration is shown as follow:
+(2) The STC-ISP configuration is shown as follow:
 
 <img src="../_static/media/chapter_4/image9.png" class="common_img" />
 
-Click **"Open Code File"** and find the hex file in [**"C51 Program/Case 2 Control PWM Servo Speed/LobotServoSpeed_C51/OBJ"**](../_static/source_code/C51_Development.zip).
+(3) Click **"Open Code File"** and find the hex file in [**"C51 Program/Case 2 Control PWM Servo Speed/LobotServoSpeed_C51/OBJ"**](../_static/source_code/C51_Development.zip).
 
 <img src="../_static/media/chapter_4/image17.png" class="common_img" />
 
-After opening the program file, click **"Download/Program"** to upload the code to the 51 microcontroller. **Note:** Before uploading, remove the jumper cap from the 51 microcontroller. Once the STC-ISP tool in the lower-right corner shows that it is detecting the target device, reinsert the jumper cap. The upload process will begin automatically.
+(4) After opening the program file, click **"Download/Program"** to upload the code to the 51 microcontroller. **Note:** Before uploading, remove the jumper cap from the 51 microcontroller. Once the STC-ISP tool in the lower-right corner shows that it is detecting the target device, reinsert the jumper cap. The upload process will begin automatically.
 
 <img src="../_static/media/chapter_4/image11.png" class="common_img" />
 
 <img src="../_static/media/chapter_4/image12.png" class="common_img" />
 
-Once the upload is complete, turn on the 32-ch servo controller's power switch, and Servo ID 1 will start moving.
+(5) Once the upload is complete, turn on the 32-ch servo controller's power switch, and Servo ID 1 will start moving.
 
 * **Project Outcome**
 
@@ -243,19 +273,19 @@ In this example, the serial port is used to send instructions to the 32-ch servo
 
 * **Run Program**
 
-Open the STC-ISP download tool in [Appendix->C51 Software](Appendix.md):
+(1) Open the STC-ISP download tool in [Appendix->C51 Software](Appendix.md):
 
 <img src="../_static/media/chapter_4/image8.png" class="common_img" />
 
-The STC-ISP configuration is shown as follow:
+(2) The STC-ISP configuration is shown as follow:
 
 <img src="../_static/media/chapter_4/image9.png" class="common_img" />
 
-Click **"Open Code File"** and find the hex file in [C51 Development/Source Code/Case 3 Control Multiple Servos/OBJ/LobotServosTurn_C51](../_static/source_code/C51_Development.zip).
+(3) Click **"Open Code File"** and find the hex file in [C51 Development/Source Code/Case 3 Control Multiple Servos/OBJ/LobotServosTurn_C51](../_static/source_code/C51_Development.zip).
 
 <img src="../_static/media/chapter_4/image20.png" class="common_img" />
 
-After opening the program file, click **"Download/Program"** to upload the code to the 51 microcontroller. **Note:** Before uploading, remove the jumper cap from the 51 microcontroller. Once the STC-ISP tool in the lower-right corner shows that it is detecting the target device, reinsert the jumper cap. The upload process will begin automatically.
+(4) After opening the program file, click **"Download/Program"** to upload the code to the 51 microcontroller. **Note:** Before uploading, remove the jumper cap from the 51 microcontroller. Once the STC-ISP tool in the lower-right corner shows that it is detecting the target device, reinsert the jumper cap. The upload process will begin automatically.
 
 <img src="../_static/media/chapter_4/image11.png" class="common_img" />
 
@@ -362,19 +392,19 @@ Servo deviation is caused by the spacing of the splines on the servo arm—a mec
 
 * **Run Program**
 
-Open the STC-ISP download tool in [Appendix->C51 Software](Appendix.md):
+(1) Open the STC-ISP download tool in [Appendix->C51 Software](Appendix.md):
 
 <img src="../_static/media/chapter_4/image8.png" class="common_img" />
 
-The STC-ISP configuration is shown as follow:
+(2) The STC-ISP configuration is shown as follow:
 
 <img src="../_static/media/chapter_4/image9.png" class="common_img" />
 
-Click **"Open Code File"** and find the hex file in ["**C51 Program/Case 4 Central Position & Deviation Adjustment/LobotServosDeviation_C51/OBJ**"](../_static/source_code/C51_Development.zip).
+(3) Click **"Open Code File"** and find the hex file in ["**C51 Program/Case 4 Central Position & Deviation Adjustment/LobotServosDeviation_C51/OBJ**"](../_static/source_code/C51_Development.zip).
 
 <img src="../_static/media/chapter_4/image23.png" class="common_img" />
 
-After opening the program file, click **"Download/Program"** to upload the code to the 51 microcontroller. **Note:** Before uploading, remove the jumper cap from the 51 microcontroller. Once the STC-ISP tool in the lower-right corner shows that it is detecting the target device, reinsert the jumper cap. The upload process will begin automatically.
+(4) After opening the program file, click **"Download/Program"** to upload the code to the 51 microcontroller. **Note:** Before uploading, remove the jumper cap from the 51 microcontroller. Once the STC-ISP tool in the lower-right corner shows that it is detecting the target device, reinsert the jumper cap. The upload process will begin automatically.
 
 <img src="../_static/media/chapter_4/image11.png" class="common_img" />
 
@@ -409,7 +439,7 @@ The library includes the necessary modules for communicating with the 32-ch serv
 
 (2) UART Initialization
 
-{lineno-start=}
+{lineno-start=3}
 ```c
 void InitUart(void)
 {

@@ -64,7 +64,7 @@ After running the program, the servo will continuously swing back and forth betw
 
 (1) Import Necessary Libraries
 
-{lineno-start=}
+{lineno-start=1}
 
 ```
 import ServoControl

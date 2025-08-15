@@ -93,7 +93,7 @@ When downloading the program, the serial ports of the Arduino UNO and the servo 
 
 <img src="../_static/media/chapter_3/image12.png" class="common_img" />
 
-(2) Program Outcome
+* **Program Outcome**
 
 After running the program, the servo will continuously rotate between the positions of 500 and 2500, with an interval of 1.5 seconds.
 
@@ -321,7 +321,7 @@ The servo deviation is caused by the interval between the teeth on the spline of
 
 (1) Open the program **LobotServoController.ino** stored in [Arduino Development/Case 4 Adjust Neutral Position and Deviation](../_static/source_code/Arduino_Development.zip).
 
-(2) After opening the program, add the library file based on **"[3.1.3 Add Library File](#anchor_3_1_3)"**.
+(2) After opening the program, add the library file based on "[3.1.3 Add Library File](#anchor_3_1_3)".
 
 :::{Note}
 
@@ -381,7 +381,7 @@ void setup() {
 
 Before running the main program, define the servo deviation. Rotate the servo to the neutral position. Wait for 2 seconds before adding the deviation angle to the neutral position. This allows the servo to rotate to the position corresponding to the deviation angle, and remain that position.
 
-{lineno-start=}
+{lineno-start=9}
 ```c++
 uint8_t deviation;    
 void loop() {

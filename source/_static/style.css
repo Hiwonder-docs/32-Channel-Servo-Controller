@@ -101,6 +101,10 @@ table {
     padding: 8px 16px;
 }
 
+.highlight span.err{
+    border:none;
+}
+
 .rst-content table.docutils-nobg td{
     vertical-align: middle;
     font-size: 90%;
